@@ -168,8 +168,10 @@ def get_processed_images():
 
 
 if __name__ == '__main__':
-    print("Starting Flask server...")
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    print("Starting Flask server on port", port)
+    app.run(debug=True, host='0.0.0.0', port=port)
 
 
 """ Facial Recognition Detection API Credits goes to Pham Luan, The Huynh Vu, and Tuan Anh Tran. "Facial Expression Recognition using Residual Masking Network". In: Proc. ICPR. 2020. @inproceedings{pham2021facial, title={Facial expression recognition using residual masking network}, author={Pham, Luan and Vu, The Huynh and Tran, Tuan Anh}, booktitle={2020 25th International Conference on Pattern Recognition (ICPR)}, pages={4513--4519}, year={2021}, organization={IEEE} } """
